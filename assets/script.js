@@ -45,3 +45,25 @@ document.querySelectorAll('.video-card').forEach(card => {
     card.style.cursor = 'default';
   }, { once: true });
 });
+
+// Read Online: lazy-load the PDF only when requested
+const pdfToggle = document.getElementById('pdfToggle');
+const pdfEmbed = document.getElementById('pdfEmbed');
+if (pdfToggle && pdfEmbed) {
+  pdfToggle.addEventListener('click', () => {
+    if (pdfEmbed.hidden) {
+      if (!pdfEmbed.childElementCount) {
+        const iframe = document.createElement('iframe');
+        iframe.src = pdfToggle.closest('.featured-book-info').querySelector('a[href$=".pdf"]').href;
+        iframe.title = 'Fasahat-e-Nabawi — full text';
+        pdfEmbed.appendChild(iframe);
+      }
+      pdfEmbed.hidden = false;
+      pdfToggle.textContent = 'Hide Book';
+      pdfEmbed.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } else {
+      pdfEmbed.hidden = true;
+      pdfToggle.textContent = 'Read Online';
+    }
+  });
+}
