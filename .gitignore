@@ -1,0 +1,8 @@
+.tools/
+.claude/
+Image1.jpeg
+Image2.jpeg
+Image3.jpeg
+WhatsApp Image*.jpeg
+.DS_Store
+Thumbs.db
