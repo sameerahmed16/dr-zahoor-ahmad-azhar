@@ -192,6 +192,8 @@ h1,h2,h3{font-family:var(--serif);font-weight:600;letter-spacing:.01em;color:var
   background:linear-gradient(155deg, var(--emerald) 0%, #14201c 100%);
 }
 .book-cover.journal{background:linear-gradient(155deg, #4a3a1e 0%, #1c1610 100%)}
+.book-cover.with-image{background:var(--surface-2)}
+.book-cover.with-image img{width:100%;height:100%;object-fit:cover;object-position:center 8%}
 .book-cover span{font-family:var(--arabic);font-size:2.4rem;color:rgba(255,255,255,0.92)}
 .book-cover::after{
   content:attr(data-year);position:absolute;bottom:10px;right:14px;
@@ -205,6 +207,11 @@ h1,h2,h3{font-family:var(--serif);font-weight:600;letter-spacing:.01em;color:var
 .book-info h3{font-size:1.15rem;margin-bottom:6px}
 .book-meta{font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:12px}
 .book-info p{color:var(--text-dim);font-size:.94rem}
+.book-link{
+  display:inline-block;margin-top:14px;font-size:.85rem;color:var(--gold-soft);
+  border-bottom:1px solid transparent;transition:border-color .25s ease;
+}
+.book-link:hover{border-color:var(--gold-soft)}
 .source-note{margin-top:36px;font-size:.85rem;color:var(--text-faint);max-width:760px}
 
 /* ---------- Featured Book ---------- */
@@ -212,22 +219,20 @@ h1,h2,h3{font-family:var(--serif);font-weight:600;letter-spacing:.01em;color:var
   display:grid;grid-template-columns:auto 1fr;gap:36px;margin-top:40px;
   background:var(--surface);border:1px solid var(--gold);border-radius:10px;padding:34px;
 }
-.featured-book-media{display:flex;gap:20px}
-.featured-book-media figure{width:170px}
+.featured-book-media{display:flex;align-items:flex-start;gap:20px;flex-wrap:wrap}
 .featured-book-media img{
-  width:170px;height:220px;object-fit:cover;border-radius:6px;border:1px solid var(--border);
-  object-position:center 15%;
+  display:block;object-fit:cover;border-radius:6px;border:1px solid var(--border);
 }
+.featured-book-media figure:first-child{width:170px}
+.featured-book-media figure:first-child img{width:170px;height:264px}
+.featured-book-media figure:last-child{width:280px}
+.featured-book-media figure:last-child img{width:280px;height:204px;object-position:center 35%}
 .featured-book-media figcaption{
   margin-top:10px;font-size:.76rem;color:var(--text-faint);line-height:1.4;
 }
 .featured-book-info h3{font-size:1.5rem;margin-bottom:6px}
 .featured-book-info p{color:var(--text-dim);font-size:.98rem;max-width:640px}
 .book-actions{display:flex;gap:16px;flex-wrap:wrap;margin-top:22px}
-.pdf-embed{margin-top:24px}
-.pdf-embed iframe{
-  width:100%;height:80vh;border:1px solid var(--border);border-radius:8px;background:var(--surface);
-}
 
 /* ---------- Media / Interviews ---------- */
 .video-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:40px}
