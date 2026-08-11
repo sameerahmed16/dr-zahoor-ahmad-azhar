@@ -153,6 +153,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:600;letter-spacing:.01em;color:var
 .bio-photo img{width:100%;display:block}
 .bio-photo img.zoom-in{transform:scale(1.22);object-fit:cover}
 .bio-photo figcaption{
+  position:relative;z-index:1;
   padding:14px 20px;font-size:.86rem;line-height:1.5;color:var(--text-dim);background:var(--surface);
   text-shadow:none;
 }
