@@ -181,6 +181,16 @@ h1,h2,h3{font-family:var(--serif);font-weight:600;letter-spacing:.01em;color:var
 .tl-org{color:var(--gold-soft);font-size:.92rem;margin-bottom:10px}
 .tl-content p:last-child{color:var(--text-dim);max-width:640px}
 
+/* ---------- Impact / Stats ---------- */
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin:40px 0 56px}
+.stat-card{
+  background:var(--surface);border:1px solid var(--border);border-radius:8px;
+  padding:32px 20px;text-align:center;transition:transform .3s ease,border-color .3s ease;
+}
+.stat-card:hover{transform:translateY(-4px);border-color:var(--gold)}
+.stat-number{font-family:var(--serif);font-size:2.6rem;font-weight:600;color:var(--gold-soft);line-height:1;margin-bottom:10px}
+.stat-label{color:var(--text-dim);font-size:.88rem;line-height:1.4}
+
 /* ---------- Publications ---------- */
 .book-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:40px}
 .book-card{
@@ -351,6 +361,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:600;letter-spacing:.01em;color:var
   .legacy-grid{grid-template-columns:1fr}
   .featured-book{grid-template-columns:1fr}
   .featured-book-media{justify-content:center}
+  .stats-grid{grid-template-columns:repeat(2,1fr)}
 }
 @media (max-width:960px){
   #navLinks{
