@@ -296,6 +296,14 @@ h1,h2,h3{font-family:var(--serif);font-weight:600;letter-spacing:.01em;color:var
   color:var(--text);font-size:.94rem;padding:8px 0;border-top:1px solid var(--border);
 }
 .condolence-list ul li:first-child{border-top:0}
+.flag-row{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:18px}
+.flag-chip{
+  display:inline-flex;align-items:center;gap:7px;background:var(--surface);
+  border:1px solid var(--border);border-radius:20px;padding:6px 14px 6px 10px;
+  font-size:.82rem;color:var(--text-dim);transition:border-color .25s ease,transform .25s ease;
+}
+.flag-chip:hover{border-color:var(--gold);transform:translateY(-2px)}
+.flag-chip .flag{font-size:1.05rem;line-height:1}
 
 /* ---------- Gallery ---------- */
 .gallery-grid{
