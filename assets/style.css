@@ -153,7 +153,8 @@ h1,h2,h3{font-family:var(--serif);font-weight:600;letter-spacing:.01em;color:var
 .bio-photo img{width:100%;display:block}
 .bio-photo img.zoom-in{transform:scale(1.22);object-fit:cover}
 .bio-photo figcaption{
-  padding:14px 20px;font-size:.82rem;color:var(--text-faint);background:var(--surface);
+  padding:14px 20px;font-size:.86rem;line-height:1.5;color:var(--text-dim);background:var(--surface);
+  text-shadow:none;
 }
 .bio-facts{
   background:var(--surface);border:1px solid var(--border);border-radius:6px;
@@ -303,7 +304,10 @@ h1,h2,h3{font-family:var(--serif);font-weight:600;letter-spacing:.01em;color:var
   font-size:.82rem;color:var(--text-dim);transition:border-color .25s ease,transform .25s ease;
 }
 .flag-chip:hover{border-color:var(--gold);transform:translateY(-2px)}
-.flag-chip .flag{font-size:1.05rem;line-height:1}
+.flag-chip .flag{
+  width:20px;height:15px;object-fit:cover;border-radius:2px;flex-shrink:0;
+  box-shadow:0 0 0 1px rgba(255,255,255,0.08);
+}
 
 /* ---------- Gallery ---------- */
 .gallery-grid{
@@ -356,6 +360,13 @@ h1,h2,h3{font-family:var(--serif);font-weight:600;letter-spacing:.01em;color:var
 .site-footer{padding:48px 0;border-top:1px solid var(--border);text-align:center}
 .footer-inner p{color:var(--text-faint);font-size:.85rem;margin-bottom:6px}
 .footer-sources{font-size:.78rem}
+
+/* Small uppercase/meta labels read better crisp, without the body's soft shadow */
+.kicker,.origin-eyebrow,.tl-tag,.stat-label,.book-badge,.book-meta,.source-note,
+.video-meta,.family-relation,.family-note,.footer-inner p,.footer-sources,
+.bio-facts dt,.bio-facts dd,.condolence-lede,.flag-chip{
+  text-shadow:none;
+}
 
 /* ---------- Reveal animation ---------- */
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease, transform .7s ease}
