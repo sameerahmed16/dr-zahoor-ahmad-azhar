@@ -300,6 +300,13 @@ h1,h2,h3{font-family:var(--serif);font-weight:600;letter-spacing:.01em;color:var
 .legacy-card{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:22px}
 .legacy-card h3{font-size:1rem;color:var(--gold-soft);margin-bottom:10px}
 .legacy-card p{color:var(--text-dim);font-size:.9rem}
+
+.legacy-video{margin:0 0 44px;border-radius:8px;overflow:hidden;border:1px solid var(--border)}
+.legacy-video video{width:100%;max-height:520px;display:block;background:#000}
+.legacy-video figcaption{
+  position:relative;z-index:1;
+  padding:14px 20px;font-size:.86rem;line-height:1.5;color:var(--text-dim);background:var(--surface);
+}
 .condolence-list{background:var(--surface-2);border:1px solid var(--border);border-radius:8px;padding:24px 26px}
 .condolence-lede{color:var(--text-dim);margin-bottom:14px;font-size:.9rem}
 .condolence-list ul li{
