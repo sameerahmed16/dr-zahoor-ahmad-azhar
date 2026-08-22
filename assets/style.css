@@ -418,3 +418,34 @@ h1,h2,h3{font-family:var(--serif);font-weight:600;letter-spacing:.01em;color:var
   .section{padding:80px 0}
   .section-inner{padding:0 22px}
 }
+
+/* ---------- Guestbook / Comments ---------- */
+.comment-form{
+  display:flex;flex-direction:column;gap:14px;margin:32px 0 40px;max-width:640px;
+}
+.comment-form input[type="text"],
+.comment-form textarea{
+  width:100%;background:var(--surface);border:1px solid var(--border);border-radius:6px;
+  color:var(--text);font-family:var(--sans);font-size:.95rem;padding:12px 14px;
+  transition:border-color .2s ease;resize:vertical;
+}
+.comment-form input[type="text"]:focus,
+.comment-form textarea:focus{outline:none;border-color:var(--gold)}
+.comment-form input[type="text"]::placeholder,
+.comment-form textarea::placeholder{color:var(--text-faint)}
+.hp-field{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.comment-form-actions{display:flex;align-items:center;gap:16px}
+.comment-status{font-size:.85rem;color:var(--text-dim)}
+.comment-status.is-error{color:#c96a4f}
+.comment-status.is-success{color:var(--emerald-soft)}
+
+.comment-list{display:flex;flex-direction:column;gap:14px;max-width:640px}
+.comment-item{
+  background:var(--surface);border:1px solid var(--border);border-radius:8px;
+  padding:16px 20px;
+}
+.comment-item-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:8px}
+.comment-author{font-weight:600;color:var(--gold-soft);font-size:.92rem}
+.comment-date{font-size:.75rem;color:var(--text-faint);white-space:nowrap}
+.comment-message{color:var(--text-dim);font-size:.92rem;line-height:1.6;white-space:pre-wrap;word-break:break-word}
+.comment-loading,.comment-empty,.comment-error{color:var(--text-faint);font-size:.9rem}

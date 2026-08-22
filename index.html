@@ -29,6 +29,7 @@
       <li><a href="#legacy">Legacy</a></li>
       <li><a href="#gallery">Gallery</a></li>
       <li><a href="#family">Family</a></li>
+      <li><a href="#comments">Guestbook</a></li>
     </ul>
   </div>
 </nav>
@@ -630,6 +631,28 @@
     </div>
   </section>
 
+  <section id="comments" class="section">
+    <div class="section-inner">
+      <p class="kicker reveal">Guestbook</p>
+      <h2 class="reveal">Share a Memory</h2>
+      <p class="section-lede reveal">Leave a message in memory of Dr. Zahoor Ahmad Azhar &mdash; a memory, a tribute, or simply your condolences. Post under your name, or anonymously.</p>
+
+      <form id="commentForm" class="comment-form reveal">
+        <input type="text" id="commentName" name="name" maxlength="80" placeholder="Your name (leave blank to post as Anonymous)">
+        <textarea id="commentMessage" name="message" maxlength="2000" rows="4" placeholder="Share a memory or message&hellip;" required></textarea>
+        <input type="text" id="commentWebsite" name="website" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <div class="comment-form-actions">
+          <button type="submit" class="btn btn-primary">Post Message</button>
+          <span class="comment-status" id="commentStatus" role="status"></span>
+        </div>
+      </form>
+
+      <div class="comment-list" id="commentList">
+        <p class="comment-loading">Loading messages&hellip;</p>
+      </div>
+    </div>
+  </section>
+
 </main>
 
 <footer class="site-footer">
@@ -640,5 +663,6 @@
 </footer>
 
 <script src="assets/script.js?v=2"></script>
+<script src="assets/comments.js"></script>
 </body>
 </html>
