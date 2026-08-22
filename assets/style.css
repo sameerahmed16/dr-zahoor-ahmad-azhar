@@ -183,6 +183,14 @@ h1,h2,h3{font-family:var(--serif);font-weight:600;letter-spacing:.01em;color:var
 .tl-content h3{font-size:1.3rem;margin-bottom:4px}
 .tl-org{color:var(--gold-soft);font-size:.92rem;margin-bottom:10px}
 .tl-content p:last-child{color:var(--text-dim);max-width:640px}
+.tl-photo{margin-top:16px;max-width:420px;border-radius:8px;overflow:hidden;border:1px solid var(--border)}
+.tl-photo img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
+.tl-photo figcaption{
+  position:relative;z-index:1;
+  padding:10px 16px;font-size:.8rem;line-height:1.5;color:var(--text-dim);background:var(--surface);
+}
+.tl-photo-row{display:flex;flex-wrap:wrap;gap:16px;margin-top:16px}
+.tl-photo-row .tl-photo{margin-top:0;flex:1 1 200px}
 
 /* ---------- Impact / Stats ---------- */
 .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin:32px 0 44px}
