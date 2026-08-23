@@ -15,6 +15,8 @@ navLinks.querySelectorAll('a').forEach(link => {
 });
 
 // Scroll reveal
+// threshold must be near 0: tall blocks (e.g. the biography text) can never
+// reach a 15% visible ratio on small viewports, leaving them permanently hidden
 const revealEls = document.querySelectorAll('.reveal');
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
@@ -23,12 +25,25 @@ const observer = new IntersectionObserver((entries) => {
       observer.unobserve(entry.target);
     }
   });
-}, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+}, { threshold: 0.01, rootMargin: '0px 0px -30px 0px' });
 
 revealEls.forEach((el, i) => {
   el.style.transitionDelay = `${Math.min(i % 6, 5) * 60}ms`;
   observer.observe(el);
 });
+
+// Safety net: reveal anything in view or already scrolled past that the
+// observer missed (fast scrolling can skip elements between frames)
+function revealMissed() {
+  document.querySelectorAll('.reveal:not(.in)').forEach(el => {
+    if (el.getBoundingClientRect().top < window.innerHeight) {
+      el.classList.add('in');
+      observer.unobserve(el);
+    }
+  });
+}
+window.addEventListener('scroll', revealMissed, { passive: true });
+window.addEventListener('load', revealMissed);
 
 // Click-to-play YouTube embeds
 document.querySelectorAll('.video-card').forEach(card => {
